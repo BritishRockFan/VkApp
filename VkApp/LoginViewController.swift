@@ -32,6 +32,24 @@ class LoginViewController: UIViewController {
 
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let login = loginTextField.text!
+        let password = passwordTextField.text!
+        if login == "admin" && password == "123456" {
+            return true
+        } else {
+            // Создаем контроллер
+            let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
+            // Создаем кнопку для UIAlertController
+            let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            // Добавляем кнопку на UIAlertController
+            alert.addAction(action)
+            // Показываем UIAlertController
+            present(alert, animated: true, completion: nil)
+            return false
+        }
+    }
+    
     @objc func keyboardWillShow(notification: Notification) {
         guard let kbSize = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: kbSize.size.height, right: 0)
@@ -47,15 +65,6 @@ class LoginViewController: UIViewController {
         self.scrollView?.endEditing(true)
     }
     
-    @IBAction func loginButton(_ sender: UIButton) {
-        let login = loginTextField.text!
-        let password = passwordTextField.text!
-        
-        if login == "admin" && password == "123456" {
-            print("Успешная авторизация")
-        } else {
-            print("Неуспешная авторизация")
-        }
+    @IBAction func loginButton(_ sender: Any) {
     }
-    
 }
