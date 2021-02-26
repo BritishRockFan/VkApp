@@ -13,9 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillAppear(_ animated: Bool) {
         let hideKeyboardGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         scrollView?.addGestureRecognizer(hideKeyboardGesture)
         
@@ -24,12 +22,47 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
 
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let checkResult = checkUserData()
+        if !checkResult {
+            showLoginError()
+        }
+        return checkResult
+    }
+    
+    func checkUserData() -> Bool {
+        guard let login = loginTextField.text, let password = passwordTextField.text else {
+            return false
+        }
+        
+        if login == "admin" && password == "123456" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func showLoginError() {
+        // Создаем контроллер
+        let alert = UIAlertController(title: "Ошибка", message: "Введены неверные данные пользователя", preferredStyle: .alert)
+        // Создаем кнопку для UIAlertController
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        // Добавляем кнопку на UIAlertController
+        alert.addAction(action)
+        // Показываем UIAlertController
+        present(alert, animated: true, completion: nil)
     }
     
     @objc func keyboardWillShow(notification: Notification) {
@@ -47,15 +80,6 @@ class LoginViewController: UIViewController {
         self.scrollView?.endEditing(true)
     }
     
-    @IBAction func loginButton(_ sender: UIButton) {
-        let login = loginTextField.text!
-        let password = passwordTextField.text!
-        
-        if login == "admin" && password == "123456" {
-            print("Успешная авторизация")
-        } else {
-            print("Неуспешная авторизация")
-        }
+    @IBAction func loginButton(_ sender: Any) {
     }
-    
 }
