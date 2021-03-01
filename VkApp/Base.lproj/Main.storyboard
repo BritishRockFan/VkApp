@@ -146,7 +146,7 @@
         <scene sceneID="QmP-I9-VFd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="twS-Vp-TNL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" id="IRc-TG-J8w" userLabel="Friends"/>
+                    <tabBarItem key="tabBarItem" title="Friends" selectedImage="person.circle" catalog="system" id="IRc-TG-J8w" userLabel="Friends"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qsg-Za-yM8">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -257,7 +257,7 @@
         <scene sceneID="xc7-aV-Q9M">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gZL-Rw-vRf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Groups" id="lws-yM-zaZ"/>
+                    <tabBarItem key="tabBarItem" title="Groups" selectedImage="person.3.fill" catalog="system" id="lws-yM-zaZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="juy-vB-Qn1">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -336,7 +336,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllGroupCell" rowHeight="73" id="vRM-Gy-aEf" customClass="UserGroupsCell" customModule="VkApp" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllGroupCell" rowHeight="73" id="vRM-Gy-aEf" customClass="AllGroupsCell" customModule="VkApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="390" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vRM-Gy-aEf" id="nBf-gt-qdS" customClass="AllGroupsCell" customModule="VkApp" customModuleProvider="target">
@@ -349,19 +349,25 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-vU-4mB">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IUD-vU-4mB">
                                             <rect key="frame" x="20" y="11" width="121" height="51"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="121" id="HI4-h6-06G"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="wNv-wp-VGL" firstAttribute="centerX" secondItem="nBf-gt-qdS" secondAttribute="centerX" id="Gf9-tg-6If"/>
-                                        <constraint firstItem="wNv-wp-VGL" firstAttribute="centerY" secondItem="nBf-gt-qdS" secondAttribute="centerY" id="gzq-c7-pN2"/>
+                                        <constraint firstItem="IUD-vU-4mB" firstAttribute="centerY" secondItem="wNv-wp-VGL" secondAttribute="centerY" id="0ev-W7-v1x"/>
+                                        <constraint firstItem="wNv-wp-VGL" firstAttribute="centerY" secondItem="nBf-gt-qdS" secondAttribute="centerY" id="4Mc-xu-T61"/>
+                                        <constraint firstItem="wNv-wp-VGL" firstAttribute="centerX" secondItem="nBf-gt-qdS" secondAttribute="centerX" id="8SY-bE-0pn"/>
+                                        <constraint firstItem="IUD-vU-4mB" firstAttribute="top" secondItem="nBf-gt-qdS" secondAttribute="topMargin" id="IsE-me-IXJ"/>
+                                        <constraint firstItem="wNv-wp-VGL" firstAttribute="leading" secondItem="IUD-vU-4mB" secondAttribute="trailing" constant="8" symbolic="YES" id="swe-yB-tcr"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="groupName" destination="wNv-wp-VGL" id="Rm1-Mn-aaQ"/>
-                                    <outlet property="groupPicture" destination="IUD-vU-4mB" id="Iwn-id-5uN"/>
+                                    <outlet property="allGroupCellName" destination="wNv-wp-VGL" id="LDk-PE-tMP"/>
+                                    <outlet property="allGroupCellPicture" destination="IUD-vU-4mB" id="68O-dw-4u5"/>
+                                    <segue destination="1Yh-8Y-vbZ" kind="unwind" identifier="addGroup" unwindAction="addGroupWithSegue:" id="gsy-H9-NiE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -373,12 +379,15 @@
                     <navigationItem key="navigationItem" id="uJW-jc-KB5"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SYp-xK-ab4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="1Yh-8Y-vbZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6783.6448598130837" y="536.50107991360699"/>
         </scene>
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.3.fill" catalog="system" width="128" height="61"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="pngegg" width="512" height="512"/>
         <image name="vkbackground" width="1920" height="1080"/>
         <systemColor name="systemBackgroundColor">

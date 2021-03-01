@@ -64,13 +64,13 @@
 			path = AllFriendsScreen;
 			sourceTree = "<group>";
 		};
-		BD28604B25ECFEBC006EF897 /* GroupsScreen */ = {
+		BD28604B25ECFEBC006EF897 /* UserGroupsScreen */ = {
 			isa = PBXGroup;
 			children = (
 				BD28604C25ECFEEC006EF897 /* UserGroupsCell.swift */,
 				BD28605325ECFF49006EF897 /* UserGroupsController.swift */,
 			);
-			path = GroupsScreen;
+			path = UserGroupsScreen;
 			sourceTree = "<group>";
 		};
 		BD28605725ED07A4006EF897 /* Model */ = {
@@ -112,7 +112,7 @@
 			children = (
 				BD28606025ED0902006EF897 /* AllGroupsAndSearchScreen */,
 				BD28605725ED07A4006EF897 /* Model */,
-				BD28604B25ECFEBC006EF897 /* GroupsScreen */,
+				BD28604B25ECFEBC006EF897 /* UserGroupsScreen */,
 				BD28604425ECF7CA006EF897 /* AllFriendsScreen */,
 				BD7D30162594D3FB00EAC3A6 /* AppDelegate.swift */,
 				BD7D30182594D3FB00EAC3A6 /* SceneDelegate.swift */,

@@ -9,7 +9,7 @@ import UIKit
 
 class UserGroupsController: UITableViewController {
     
-    var groupList = ["Cars",
+    var activeGroupList = ["Cars",
                      "Whiskey lovers",
                      "Video Games",]
 
@@ -31,15 +31,28 @@ class UserGroupsController: UITableViewController {
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupList.count
+        return activeGroupList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! UserGroupsCell
-        let group = groupList[indexPath.row]
+        let group = activeGroupList[indexPath.row]
         cell.groupName.text = group
 
         return cell
+    }
+    
+    @IBAction func addGroup (segue: UIStoryboardSegue) {
+        if segue.identifier == "addGroup" {
+            guard let allGroupsController = segue.source as? AllGroupsController else { return }
+            if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
+                let group = allGroupsController.allGroupList[indexPath.row]
+                if !activeGroupList.contains(group) {
+                    activeGroupList.append(group)
+                    tableView.reloadData()
+                }
+            }
+        }
     }
 
     /*
@@ -50,17 +63,12 @@ class UserGroupsController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            activeGroupList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.
