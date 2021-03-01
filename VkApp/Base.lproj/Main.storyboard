@@ -161,35 +161,47 @@
             </objects>
             <point key="canvasLocation" x="4244.8598130841119" y="-213.17494600431968"/>
         </scene>
-        <!--Table View Controller-->
+        <!--All Friends Controller-->
         <scene sceneID="qud-54-k5F">
             <objects>
-                <tableViewController id="avc-Pg-SBZ" sceneMemberID="viewController">
+                <tableViewController id="avc-Pg-SBZ" customClass="AllFriendsController" customModule="VkApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1Uf-Ay-lM8">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IWU-po-qoe">
-                                <rect key="frame" x="0.0" y="28" width="390" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="73" id="IWU-po-qoe" customClass="AllFriendsCell" customModule="VkApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="390" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IWU-po-qoe" id="LFC-yh-IDs">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="73"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9T-9v-rID">
-                                            <rect key="frame" x="171" y="11.333333333333336" width="48" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9T-9v-rID">
+                                            <rect key="frame" x="154.66666666666666" y="26" width="80.666666666666657" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iik-dc-1f6">
+                                            <rect key="frame" x="19" y="11" width="127" height="51"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="127" id="Bn7-Yd-Snf"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Iik-dc-1f6" firstAttribute="leading" secondItem="LFC-yh-IDs" secondAttribute="leadingMargin" constant="-1" id="1F5-0D-aRQ"/>
                                         <constraint firstItem="j9T-9v-rID" firstAttribute="centerX" secondItem="LFC-yh-IDs" secondAttribute="centerX" id="N7M-LL-FpS"/>
+                                        <constraint firstItem="Iik-dc-1f6" firstAttribute="centerY" secondItem="LFC-yh-IDs" secondAttribute="centerY" id="YuG-Cx-ESe"/>
                                         <constraint firstItem="j9T-9v-rID" firstAttribute="centerY" secondItem="LFC-yh-IDs" secondAttribute="centerY" id="gen-jn-SbX"/>
+                                        <constraint firstItem="j9T-9v-rID" firstAttribute="leading" secondItem="Iik-dc-1f6" secondAttribute="trailing" constant="8.6666666666666572" id="mQa-2h-wHa"/>
+                                        <constraint firstItem="Iik-dc-1f6" firstAttribute="top" secondItem="LFC-yh-IDs" secondAttribute="topMargin" id="qb5-AJ-Uct"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="friendName" destination="j9T-9v-rID" id="Ju8-ue-yMA"/>
+                                    <outlet property="friendPicture" destination="Iik-dc-1f6" id="JDU-OQ-oNN"/>
                                     <segue destination="Y9H-wP-HKX" kind="show" id="NB3-f1-Nw1"/>
                                 </connections>
                             </tableViewCell>
@@ -203,7 +215,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ki4-Zg-Fgf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5590.6542056074759" y="-213.17494600431968"/>
+            <point key="canvasLocation" x="5587.6923076923076" y="-213.27014218009478"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="oPk-Tw-FXN">
