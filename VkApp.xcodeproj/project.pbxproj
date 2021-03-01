@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		BD28604625ECF8E9006EF897 /* AllFriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28604525ECF8E9006EF897 /* AllFriendsController.swift */; };
 		BD28604925ECF921006EF897 /* AllFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28604825ECF921006EF897 /* AllFriendsCell.swift */; };
+		BD28604D25ECFEEC006EF897 /* UserGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28604C25ECFEEC006EF897 /* UserGroupsCell.swift */; };
+		BD28605425ECFF49006EF897 /* UserGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28605325ECFF49006EF897 /* UserGroupsController.swift */; };
+		BD28605925ED07B9006EF897 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28605825ED07B9006EF897 /* User.swift */; };
+		BD28605D25ED07D8006EF897 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28605C25ED07D8006EF897 /* Group.swift */; };
+		BD28606225ED0939006EF897 /* AllGroupsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28606125ED0939006EF897 /* AllGroupsCell.swift */; };
+		BD28606525ED0970006EF897 /* AllGroupsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD28606425ED0970006EF897 /* AllGroupsController.swift */; };
 		BD7D30172594D3FB00EAC3A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D30162594D3FB00EAC3A6 /* AppDelegate.swift */; };
 		BD7D30192594D3FB00EAC3A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D30182594D3FB00EAC3A6 /* SceneDelegate.swift */; };
 		BD7D301E2594D3FB00EAC3A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD7D301C2594D3FB00EAC3A6 /* Main.storyboard */; };
@@ -21,6 +27,12 @@
 /* Begin PBXFileReference section */
 		BD28604525ECF8E9006EF897 /* AllFriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFriendsController.swift; sourceTree = "<group>"; };
 		BD28604825ECF921006EF897 /* AllFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFriendsCell.swift; sourceTree = "<group>"; };
+		BD28604C25ECFEEC006EF897 /* UserGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupsCell.swift; sourceTree = "<group>"; };
+		BD28605325ECFF49006EF897 /* UserGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroupsController.swift; sourceTree = "<group>"; };
+		BD28605825ED07B9006EF897 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BD28605C25ED07D8006EF897 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		BD28606125ED0939006EF897 /* AllGroupsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsCell.swift; sourceTree = "<group>"; };
+		BD28606425ED0970006EF897 /* AllGroupsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGroupsController.swift; sourceTree = "<group>"; };
 		BD7D30132594D3FB00EAC3A6 /* VkApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VkApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7D30162594D3FB00EAC3A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD7D30182594D3FB00EAC3A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +64,33 @@
 			path = AllFriendsScreen;
 			sourceTree = "<group>";
 		};
+		BD28604B25ECFEBC006EF897 /* GroupsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BD28604C25ECFEEC006EF897 /* UserGroupsCell.swift */,
+				BD28605325ECFF49006EF897 /* UserGroupsController.swift */,
+			);
+			path = GroupsScreen;
+			sourceTree = "<group>";
+		};
+		BD28605725ED07A4006EF897 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD28605825ED07B9006EF897 /* User.swift */,
+				BD28605C25ED07D8006EF897 /* Group.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BD28606025ED0902006EF897 /* AllGroupsAndSearchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BD28606125ED0939006EF897 /* AllGroupsCell.swift */,
+				BD28606425ED0970006EF897 /* AllGroupsController.swift */,
+			);
+			path = AllGroupsAndSearchScreen;
+			sourceTree = "<group>";
+		};
 		BD7D300A2594D3FB00EAC3A6 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +110,9 @@
 		BD7D30152594D3FB00EAC3A6 /* VkApp */ = {
 			isa = PBXGroup;
 			children = (
+				BD28606025ED0902006EF897 /* AllGroupsAndSearchScreen */,
+				BD28605725ED07A4006EF897 /* Model */,
+				BD28604B25ECFEBC006EF897 /* GroupsScreen */,
 				BD28604425ECF7CA006EF897 /* AllFriendsScreen */,
 				BD7D30162594D3FB00EAC3A6 /* AppDelegate.swift */,
 				BD7D30182594D3FB00EAC3A6 /* SceneDelegate.swift */,
@@ -155,11 +197,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD7D30302594DE7C00EAC3A6 /* LoginViewController.swift in Sources */,
+				BD28605425ECFF49006EF897 /* UserGroupsController.swift in Sources */,
+				BD28606225ED0939006EF897 /* AllGroupsCell.swift in Sources */,
 				BD28604925ECF921006EF897 /* AllFriendsCell.swift in Sources */,
+				BD28605D25ED07D8006EF897 /* Group.swift in Sources */,
 				BD7D30212594D3FB00EAC3A6 /* VkApp.xcdatamodeld in Sources */,
 				BD28604625ECF8E9006EF897 /* AllFriendsController.swift in Sources */,
+				BD28605925ED07B9006EF897 /* User.swift in Sources */,
 				BD7D30172594D3FB00EAC3A6 /* AppDelegate.swift in Sources */,
+				BD28606525ED0970006EF897 /* AllGroupsController.swift in Sources */,
 				BD7D30192594D3FB00EAC3A6 /* SceneDelegate.swift in Sources */,
+				BD28604D25ECFEEC006EF897 /* UserGroupsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
