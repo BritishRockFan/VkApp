@@ -5,8 +5,9 @@
 //  Created by Никита Смирнов on 01.03.2021.
 //
 
-import Foundation
+import UIKit
 
-struct Group {
-    var groupName: String
+struct Group: Equatable {
+    var groupName: String?
+    var groupImage: UIImage?
 }

@@ -5,8 +5,10 @@
 //  Created by Никита Смирнов on 01.03.2021.
 //
 
-import Foundation
+import UIKit
 
-struct User {
-    var userName: String
+struct User: Equatable {
+    var userName: String?
+    var userStatus: String?
+    var userImage: UIImage?
 }
