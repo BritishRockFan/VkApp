@@ -237,7 +237,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserCell" id="jpb-kg-31G" customClass="FriendPhotoCell" customModule="VkApp" customModuleProvider="target">
                                 <rect key="frame" x="70" y="0.0" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="I7p-Dg-v6u">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I7p-Dg-v6u">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -253,16 +253,27 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Friend5" translatesAutoresizingMaskIntoConstraints="NO" id="Cdi-JP-r1i">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Friend5" translatesAutoresizingMaskIntoConstraints="NO" id="Cdi-JP-r1i">
                                             <rect key="frame" x="8" y="8" width="240" height="182"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="182" id="bb8-he-pmM"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="zaa-pL-QI6" firstAttribute="bottom" secondItem="I7p-Dg-v6u" secondAttribute="bottomMargin" id="T9r-Pp-QEL"/>
-                                        <constraint firstItem="zaa-pL-QI6" firstAttribute="centerX" secondItem="I7p-Dg-v6u" secondAttribute="centerX" id="VLh-8Z-zQV"/>
-                                        <constraint firstItem="zaa-pL-QI6" firstAttribute="top" secondItem="avA-FB-Feq" secondAttribute="bottom" constant="2" id="Z6Q-8p-9Ol"/>
-                                        <constraint firstItem="zaa-pL-QI6" firstAttribute="centerX" secondItem="avA-FB-Feq" secondAttribute="centerX" id="uMf-jS-pRt"/>
+                                        <constraint firstItem="Cdi-JP-r1i" firstAttribute="leading" secondItem="I7p-Dg-v6u" secondAttribute="leading" constant="8" id="3UA-Zt-KWw"/>
+                                        <constraint firstItem="zaa-pL-QI6" firstAttribute="top" secondItem="avA-FB-Feq" secondAttribute="bottom" constant="2" id="61m-Vt-wTU"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="avA-FB-Feq" secondAttribute="trailing" id="HYk-lp-hny"/>
+                                        <constraint firstItem="avA-FB-Feq" firstAttribute="centerX" secondItem="zaa-pL-QI6" secondAttribute="centerX" id="Ltk-sk-AcH"/>
+                                        <constraint firstAttribute="bottom" secondItem="avA-FB-Feq" secondAttribute="bottom" constant="31" id="Myf-wf-TiQ"/>
+                                        <constraint firstItem="avA-FB-Feq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I7p-Dg-v6u" secondAttribute="leading" id="W8E-si-8K2"/>
+                                        <constraint firstItem="avA-FB-Feq" firstAttribute="centerX" secondItem="I7p-Dg-v6u" secondAttribute="centerX" id="Yto-IT-i13"/>
+                                        <constraint firstItem="Cdi-JP-r1i" firstAttribute="top" secondItem="I7p-Dg-v6u" secondAttribute="top" constant="8" id="ZqA-Pr-EPe"/>
+                                        <constraint firstItem="avA-FB-Feq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I7p-Dg-v6u" secondAttribute="leading" id="dUB-tp-40L"/>
+                                        <constraint firstItem="avA-FB-Feq" firstAttribute="top" secondItem="Cdi-JP-r1i" secondAttribute="bottom" constant="8" id="iSn-ky-w38"/>
+                                        <constraint firstAttribute="trailing" secondItem="Cdi-JP-r1i" secondAttribute="trailing" constant="2" id="mc1-nf-wRF"/>
+                                        <constraint firstItem="avA-FB-Feq" firstAttribute="top" secondItem="Cdi-JP-r1i" secondAttribute="bottom" constant="8" symbolic="YES" id="qYl-I6-9OI"/>
+                                        <constraint firstItem="Cdi-JP-r1i" firstAttribute="leading" secondItem="I7p-Dg-v6u" secondAttribute="leadingMargin" id="wWa-d3-IEb"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="250" height="250"/>
@@ -317,7 +328,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="90" id="MQG-Yq-0zC" customClass="UserGroupsCell" customModule="VkApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="390" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MQG-Yq-0zC" id="pkI-GE-uq1">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MQG-Yq-0zC" id="pkI-GE-uq1">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -379,7 +390,7 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AllGroupCell" rowHeight="90" id="K4s-EY-nbs" customClass="AllGroupsCell" customModule="VkApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="390" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K4s-EY-nbs" id="aDh-qi-lun">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K4s-EY-nbs" id="aDh-qi-lun">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
